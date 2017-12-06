@@ -1,38 +1,32 @@
 package practice.sv.bai1;
 
 public class Student {
-	String ho, ten, ngaysinh, email;
+	String lastName, firstName, birthDay, email;
 
-	public Student(String ho, String ten, String ngaysinh, String email) {
-		super();
-		this.ho = ho;
-		this.ten = ten;
-		this.ngaysinh = ngaysinh;
-		this.email = email;
+	public Student() {}
+
+	public String getLastName() {
+		return lastName;
 	}
 
-	public String getHo() {
-		return ho;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public void setHo(String ho) {
-		this.ho = ho;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public String getTen() {
-		return ten;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public void setTen(String ten) {
-		this.ten = ten;
+	public String getBirthDay() {
+		return birthDay;
 	}
 
-	public String getNgaysinh() {
-		return ngaysinh;
-	}
-
-	public void setNgaysinh(String ngaysinh) {
-		this.ngaysinh = ngaysinh;
+	public void setBirthDay(String birthDay) {
+		this.birthDay = birthDay;
 	}
 
 	public String getEmail() {
@@ -43,8 +37,19 @@ public class Student {
 		this.email = email;
 	}
 
-	//@Override
-	public String toString() {
-		return "Student [ho=" + ho + ", ten=" + ten + ", ngaysinh=" + ngaysinh + ", email=" + email + "]";
+	public Student(String lastName, String firstName, String birthDay, String email) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.birthDay = birthDay;
+		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [lastName=" + lastName + ", firstName=" + firstName + ", birthDay=" + birthDay + ", email="
+				+ email + "]";
+	}
+	
+	
 }

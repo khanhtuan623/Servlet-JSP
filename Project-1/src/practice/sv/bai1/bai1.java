@@ -2,6 +2,7 @@ package practice.sv.bai1;
 
 import java.awt.EventQueue;
 import java.io.File;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -47,7 +48,8 @@ public class bai1 {
 		
 		//nút Upload
 		btnUpload.addActionListener(e ->{
-			ReadFile.listStudent(filename);
+			List listst =ReadFile.listStudent(filename);
+			ReadFile.printData(listst);
 		});
 	}
 
