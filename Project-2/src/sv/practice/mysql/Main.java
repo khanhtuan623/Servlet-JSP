@@ -3,7 +3,6 @@ package sv.practice.mysql;
 import java.awt.EventQueue;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -55,11 +54,11 @@ public class Main {
 		});
 		btnInsert.addActionListener(e -> {
 			List<Student> listStudent = ReadFile.listStudent(fileID);
-			for (Student st : listStudent) {
+			listStudent.stream()
+			.forEach(st->{
 				Student student=new Student(st.getLastName(),st.getFirstName(),st.getBirthDay(),st.getEmail());
 				Insert.insertInfo(student);
-			}
-			
+			});
 		});
 
 		btnShow.addActionListener(e -> {

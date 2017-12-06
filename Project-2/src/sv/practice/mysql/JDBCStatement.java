@@ -17,7 +17,6 @@ public class JDBCStatement {
 			ResultSet rs=statement.executeQuery(sql);
 			while(rs.next())
 			{
-				int id=rs.getInt("id");
 				String lname=rs.getString("last_name");
 				String fname=rs.getString("first_name");
 				String bd=rs.getString("birth_day");
