@@ -1,6 +1,12 @@
 package practice.sv.bai1;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String lastName, firstName, birthDay, email;
 
 	public Student() {}
