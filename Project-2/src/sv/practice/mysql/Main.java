@@ -54,11 +54,7 @@ public class Main {
 		});
 		btnInsert.addActionListener(e -> {
 			List<Student> listStudent = ReadFile.listStudent(fileID);
-			listStudent.stream()
-			.forEach(st->{
-				Student student=new Student(st.getLastName(),st.getFirstName(),st.getBirthDay(),st.getEmail());
-				Insert.insertInfo(student);
-			});
+			Insert.insertInfo((ArrayList<Student>) listStudent);
 		});
 
 		btnShow.addActionListener(e -> {
