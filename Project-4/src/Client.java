@@ -67,7 +67,7 @@ public class Client {
 					DataOutputStream output = new DataOutputStream(client.getOutputStream());
 					output.writeUTF("SendData");
 										
-					List<practice.sv.bai1.Student> st = new ArrayList<practice.sv.bai1.Student>();
+					List<Student> st = new ArrayList<Student>();
 					st = ReadFile.listStudent(filename);
 					
 					ObjectOutputStream objectOutput = new ObjectOutputStream(client.getOutputStream());
@@ -101,7 +101,7 @@ public class Client {
 					ObjectInputStream input = new ObjectInputStream(client.getInputStream()); // lấy dữ liệu từ server
 					System.out.println("Reading...");
 					try {
-						students = (ArrayList<practice.sv.bai1.Student>) input.readObject(); 
+						students = (ArrayList<Student>) input.readObject(); 
 					} catch (ClassNotFoundException e1) {
 						e1.printStackTrace();
 					}

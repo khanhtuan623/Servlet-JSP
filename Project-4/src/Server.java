@@ -71,11 +71,7 @@ public class Server extends Thread {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					for(int i=0;i<st.size();i++)
-					{
-						Student student=new Student();
-						Insert.insertInfo(student);
-					}
+					Insert.insertInfo(st);
 					System.out.println("Insert done!");
 				}
 				} catch (IOException e) {
