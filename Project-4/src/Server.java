@@ -22,7 +22,7 @@ public class Server extends Thread {
 
 	private JFrame frame;
 	private ServerSocket serverSocket;
-	private ArrayList<practice.sv.bai1.Student> students;
+	private ArrayList<Student> students;
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
@@ -44,7 +44,7 @@ public class Server extends Thread {
 				String path = input.readUTF();
 				
 				// nếu nhận được request, thực hiện gửi dữ liệu
-				if(path.equals("RecieveData")){
+				if(path.equals("recieveData")){
 					students = new ArrayList<>();
 					students = (ArrayList<Student>) JDBCStatement.readData();
 					
