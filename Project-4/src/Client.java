@@ -34,7 +34,7 @@ public class Client {
 					Client window = new Client();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace(); 
 				}
 			}
 		});
