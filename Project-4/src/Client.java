@@ -15,14 +15,13 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import practice.sv.bai1.*;
 
 public class Client {
 
 	private JFrame frame;
 	private JButton btnBrowse;
 	private JButton btnUpload;
-	private ArrayList<practice.sv.bai1.Student> students;
+	private ArrayList<Student> students;
 	private JButton btnRead;
 	private String filename;
 	private JTextField textLink;
@@ -67,7 +66,7 @@ public class Client {
 					DataOutputStream output = new DataOutputStream(client.getOutputStream());
 					output.writeUTF("SendData");
 										
-					List<practice.sv.bai1.Student> st = new ArrayList<practice.sv.bai1.Student>();
+					List<Student> st = new ArrayList<Student>();
 					st = ReadFile.listStudent(filename);
 					
 					ObjectOutputStream objectOutput = new ObjectOutputStream(client.getOutputStream());
