@@ -11,7 +11,7 @@ public class Insert {
 	public static void insertInfo(ArrayList<Student> students)
 	{
 		Connection connection=JDBCConectionMysql.getJDBCConnection();
-		try {
+		try { 
 			students.stream()
 			.forEach(st->{
 				Statement statement = null;
