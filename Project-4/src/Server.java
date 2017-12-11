@@ -23,13 +23,6 @@ public class Server extends Thread {
 	private JFrame frame;
 	private ServerSocket serverSocket;
 	private ArrayList<practice.sv.bai1.Student> students;
-	
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/students";
-	static final String TABLE = "class";
-
-	static final String USER = "root";
-	static final String PASS = "admin";
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
@@ -62,8 +55,6 @@ public class Server extends Thread {
 					// nếu không thực hiện lưu dữ liệu
 				}else{
 					ArrayList<Student> st = new ArrayList<Student>();
-					
-					
 					ObjectInputStream objectInput =  new ObjectInputStream(server.getInputStream());
 					try {
 						st = (ArrayList<Student>) objectInput.readObject();
