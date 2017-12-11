@@ -13,6 +13,10 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
+import practice.sv.bai1.*;
+import sv.practice.*;
+import sv.practice.mysql.Insert;
+import sv.practice.mysql.JDBCStatement;
 
 public class Server extends Thread {
 
@@ -49,40 +53,28 @@ public class Server extends Thread {
 				// nếu nhận được request, thực hiện gửi dữ liệu
 				if(path.equals("RecieveData")){
 					students = new ArrayList<>();
-					try {
-						Statement statement=JDBCConectionMysql.getJDBCConnection().createStatement();
-						String sql="SELECT * FROM student.info";
-						ResultSet rs=statement.executeQuery(sql);
-						while(rs.next())
-						{
-							students.add(new practice.sv.bai1.Student(rs.getString("fname"),rs.getString("lname"),rs.getString("bd"),rs.getString("email")));
-						}
-						} catch (SQLException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+					students = (ArrayList<Student>) JDBCStatement.readData();
 					
 					ObjectOutputStream output = new ObjectOutputStream(server.getOutputStream());
 					output.writeObject(students);
 					System.out.println("Sent!");
 					
-				
-					
 					// nếu không thực hiện lưu dữ liệu
 				}else{
-					ArrayList<practice.sv.bai1.Student> st = new ArrayList<practice.sv.bai1.Student>();
+					ArrayList<Student> st = new ArrayList<Student>();
 					
 					
 					ObjectInputStream objectInput =  new ObjectInputStream(server.getInputStream());
 					try {
-						st = (ArrayList<practice.sv.bai1.Student>) objectInput.readObject();
+						st = (ArrayList<Student>) objectInput.readObject();
 					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					for(int i=0;i<st.size();i++)
 					{
-						Insert.insertInfo(st.get(i).getFirstName(),st.get(i).getLastName(),st.get(i).getBirthDay(), st.get(i).getEmail());
+						Student student=new Student();
+						Insert.insertInfo(student);
 					}
 					System.out.println("Insert done!");
 				}
