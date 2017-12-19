@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  <!-- Servlet Insert Mapping -->
+   <servlet>
+  <servlet-name>Ex8Insert</servlet-name>
+  <servlet-class>project.practice.ex8.InsertData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ex8Insert</servlet-name>
+  <url-pattern>/InsertData</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- Servlet ReadData Mapping -->
+   <servlet>
+  <servlet-name>Ex8Read</servlet-name>
+  <servlet-class>project.practice.ex8.ReadData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ex8Read</servlet-name>
+  <url-pattern>/ReadData</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- Jsp Optione Mapping -->
+  <servlet>
+  <servlet-name>Ex8Optione</servlet-name>
+  <jsp-file>/jsp/Optione.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ex8Optione</servlet-name>
+  <url-pattern>/Optione</url-pattern>
+  </servlet-mapping>
+</web-app>

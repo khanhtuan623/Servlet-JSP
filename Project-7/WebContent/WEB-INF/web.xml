@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+ <!--  Servlet Mapping -->
+  <servlet>
+    <servlet-name>Ex7InsertData</servlet-name>
+    <servlet-class>project.practice.ex7.InsertData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex7InsertData</servlet-name>
+    <url-pattern>/Data</url-pattern>
+  </servlet-mapping>
+  
+ <!--  JSP Mapping -->
+  <servlet>
+    <servlet-name>Ex7Upload</servlet-name>
+    <jsp-file>/jsp/Upload.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex7Upload</servlet-name>
+    <url-pattern>/Upload</url-pattern>
+  </servlet-mapping>
+</web-app>
