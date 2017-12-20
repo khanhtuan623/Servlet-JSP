@@ -1,9 +1,9 @@
 package project.practice.ex8;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,10 +27,10 @@ public class ReadData extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out=response.getWriter();
-		ArrayList<Student>listS=(ArrayList<Student>) JDBCStatement.readData();
-		listS.stream()
-				.forEach(stu->out.println(stu.toString()));
+		List<Student>listS=(List<Student>) JDBCStatement.readData();
+		RequestDispatcher dispatcher=request.getRequestDispatcher("/jsp/Show.jsp");
+		request.setAttribute("listStudent",listS);
+		dispatcher.forward(request, response);
 	}
 
 }

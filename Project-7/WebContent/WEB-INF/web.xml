@@ -3,11 +3,11 @@
   
  <!--  Servlet Mapping -->
   <servlet>
-    <servlet-name>Ex7InsertData</servlet-name>
-    <servlet-class>project.practice.ex7.InsertData</servlet-class>
+    <servlet-name>Ex7UploadData</servlet-name>
+    <servlet-class>project.practice.ex7.UploadData</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex7InsertData</servlet-name>
+    <servlet-name>Ex7UploadData</servlet-name>
     <url-pattern>/Data</url-pattern>
   </servlet-mapping>
   

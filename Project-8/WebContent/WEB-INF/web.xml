@@ -30,4 +30,14 @@
   <servlet-name>Ex8Optione</servlet-name>
   <url-pattern>/Optione</url-pattern>
   </servlet-mapping>
+  
+  <!-- Jsp Show Mapping -->
+  <servlet>
+  <servlet-name>Ex8Show</servlet-name>
+  <jsp-file>/jsp/Show.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ex8Show</servlet-name>
+  <url-pattern>/Show</url-pattern>
+  </servlet-mapping>
 </web-app>
